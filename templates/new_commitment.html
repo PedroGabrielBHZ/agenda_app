@@ -1,0 +1,28 @@
+{% extends 'layout.html' %} {% block content %}
+
+<form action="/commitments/new" method="post">
+    <fieldset>
+        <legend>Commitment Details</legend>
+        <div class="table rows">
+            <p>
+                <label for="date">Date</label>
+                <input name="date" id="date" type="date" placeholder="Date" />
+            </p>
+            <p>
+                <label for="time">Time</label>
+                <input name="time" id="time" type="time" placeholder="Time" />
+            </p>
+            <p>
+                <label for="location">Location</label>
+                <input name="location" id="location" type="text" placeholder="Location" />
+            </p>
+            <p>
+                <label for="description">Description</label>
+                <textarea name="description" id="description" placeholder="Description"></textarea>
+            </p>
+        </div>
+        <button style="padding: 10px 20px; float: right">Save</button>
+    </fieldset>
+</form>
+
+{% endblock %}

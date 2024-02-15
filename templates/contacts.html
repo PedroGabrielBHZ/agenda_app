@@ -1,0 +1,30 @@
+{% extends 'layout.html' %} {% block content %}
+<h1>
+  Contacts
+</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for contact in contacts %}
+    <tr>
+      <td>{{ contact.name }}</td>
+      <td>{{ contact.phone }}</td>
+      <td>{{ contact.email }}</td>
+      <td>
+        <button hx-delete="/contacts/{{ contact.id }}" hx-target="body">
+          Delete
+        </button>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<button hx-get="/contacts/new" hx-target="body">Add</button>
+{% endblock %}

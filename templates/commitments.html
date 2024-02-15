@@ -1,0 +1,34 @@
+{% extends 'layout.html' %} {% block content %}
+<h1>
+    Commitments
+</h1>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Location</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for commitment in commitments %}
+        <tr>
+            <td>{{ commitment.id }}</td>
+            <td>{{ commitment.date }}</td>
+            <td>{{ commitment.time }}</td>
+            <td>{{ commitment.location }}</td>
+            <td>{{ commitment.description[:50] }}</td>
+            <td>
+                <button hx-delete="/commitments/{{ commitment.id }}" hx-target="body">
+                    Delete
+                </button>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<button hx-get="/commitments/new" hx-target="body">Add</button>
+{% endblock %}

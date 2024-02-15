@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <title>Agenda</title>
+  <link rel="stylesheet" href="https://unpkg.com/missing.css@1.1.1" />
+  <link rel="stylesheet" href="/static/site.css" />
+  <script src="/static/js/htmx-1.8.0.js"></script>
+  <script src="/static/js/_hyperscript-0.9.7.js"></script>
+  <script src="/static/js/rsjs-menu.js" type="module"></script>
+  <script defer src="https://unpkg.com/alpinejs@3/dist/cdn.min.js"></script>
+</head>
+
+<body hx-boost="true">
+  <main>
+    <header>
+      <h1>Agenda</h1>
+      <div style="float: right;">
+        <button hx-get="/contacts" hx-target="body">Contacts</button>
+        <button hx-get="/commitments" hx-target="body">Commitments</button>
+      </div>
+    </header>
+    {% block content %}{% endblock %}
+  </main>
+</body>
+
+</html>

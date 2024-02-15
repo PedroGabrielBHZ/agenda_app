@@ -1,0 +1,46 @@
+{
+    "contacts": [
+        {
+            "id": 1,
+            "name": "John Doe",
+            "phone": "+1234567890",
+            "email": "johndoe@example.com"
+        },
+        {
+            "id": 3,
+            "name": "Alice",
+            "phone": "+9876543211",
+            "email": "alice@example.com"
+        }
+    ],
+    "commitments": [
+        {
+            "id": 2,
+            "date": "2024-02-20",
+            "time": "14:00",
+            "location": "Gym",
+            "description": "Personal training"
+        },
+        {
+            "id": 3,
+            "date": "2024-02-25",
+            "time": "18:00",
+            "location": "Grocery Store",
+            "description": "Buying groceries"
+        }
+    ],
+    "commitment_contact": [
+        {
+            "commitment_id": 1,
+            "contact_id": 1
+        },
+        {
+            "commitment_id": 1,
+            "contact_id": 2
+        },
+        {
+            "commitment_id": 2,
+            "contact_id": 2
+        }
+    ]
+}
